@@ -1,0 +1,13 @@
+# Sample application log lines (SLF4J / Logback)
+
+These illustrate typical events after starting the app and calling the REST API.
+
+```
+2025-03-23T10:15:01.234+00:00 INFO  [main] c.e.EmployeeListApplication - Started EmployeeListApplication in 3.421 seconds
+2025-03-23T10:15:45.100+00:00 INFO  [http-nio-8080-exec-1] c.e.service.EmployeeService - Creating employee email=new.user@example.com
+2025-03-23T10:15:45.210+00:00 INFO  [http-nio-8080-exec-2] c.e.service.EmployeeService - Updating employee id=1
+2025-03-23T10:15:46.050+00:00 INFO  [http-nio-8080-exec-3] c.e.service.EmployeeService - Deleting employee id=2
+2025-03-23T10:15:46.080+00:00 INFO  [http-nio-8080-exec-3] c.e.service.EmployeeService - Deleted employee id=2
+```
+
+Pattern is configured in `src/main/resources/logback-spring.xml`.

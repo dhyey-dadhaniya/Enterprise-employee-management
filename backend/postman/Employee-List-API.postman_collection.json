@@ -1,0 +1,102 @@
+{
+  "info": {
+    "name": "Employee List API",
+    "description": "CRUD REST API for Employee resource",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees"]
+        },
+        "description": "Returns 200 OK with list of all employees"
+      }
+    },
+    {
+      "name": "Get Employee By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        },
+        "description": "Returns 200 OK with employee or 404 Not Found"
+      }
+    },
+    {
+      "name": "Create Employee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"department\": \"Engineering\",\n  \"phone\": \"+1-555-0100\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees"]
+        },
+        "description": "Returns 201 Created with Location header and body"
+      }
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe Updated\",\n  \"email\": \"john.doe@example.com\",\n  \"department\": \"Product\",\n  \"phone\": \"+1-555-0101\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        },
+        "description": "Returns 200 OK with updated employee or 404 Not Found"
+      }
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        },
+        "description": "Returns 204 No Content or 404 Not Found"
+      }
+    }
+  ]
+}
